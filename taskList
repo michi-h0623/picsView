@@ -1,0 +1,6 @@
+PhotoDetail.vue
+    v-on:click でmethodにとぶ
+    axios.delete する
+    確認画面も出す
+    削除完了後TOPに画面遷移する
+
