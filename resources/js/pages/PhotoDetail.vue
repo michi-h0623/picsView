@@ -128,14 +128,18 @@ export default {
       if (window.confirm("削除しますか？")) {
         const response = await axios.delete(`/api/photos/${this.id}`);
         console.log(response);
-        if (response !== OK) {
+
+        if (response.status !== OK) {
           this.$store.commit("error/setCode", response.status);
           return false;
         }
 
-        // this.$router.push("/");
-        this.$emit("goToTopPage");
+        this.$store.commit("message/setContent", {
+          content: "削除が成功しました！",
+          timeout: 6000
+        });
 
+        this.$router.push("/");
       } else {
         alert("削除しませんでした");
       }

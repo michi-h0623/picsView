@@ -2699,7 +2699,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
               case 3:
                 if (!window.confirm("削除しますか？")) {
-                  _context3.next = 14;
+                  _context3.next = 15;
                   break;
                 }
 
@@ -2710,7 +2710,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 response = _context3.sent;
                 console.log(response);
 
-                if (!(response !== _util__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
+                if (!(response.status !== _util__WEBPACK_IMPORTED_MODULE_1__["OK"])) {
                   _context3.next = 11;
                   break;
                 }
@@ -2719,15 +2719,18 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _context3.abrupt("return", false);
 
               case 11:
-                // this.$router.push("/");
-                this.$emit("goToTopPage");
-                _context3.next = 15;
+                this.$store.commit("message/setContent", {
+                  content: "削除が成功しました！",
+                  timeout: 6000
+                });
+                this.$router.push("/");
+                _context3.next = 16;
                 break;
 
-              case 14:
+              case 15:
                 alert("削除しませんでした");
 
-              case 15:
+              case 16:
               case "end":
                 return _context3.stop();
             }
@@ -23718,8 +23721,8 @@ var NOT_FOUND = 404;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/michi-h/laravel/testProject/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/michi-h/laravel/testProject/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/michi-h/laravel/picsView/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/michi-h/laravel/picsView/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
